@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5029555140664285523}
   m_Layer: 0
-  m_Name: shoeRack
+  m_Name: ShoeRack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
