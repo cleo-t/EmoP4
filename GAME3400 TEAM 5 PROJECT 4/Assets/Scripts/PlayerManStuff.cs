@@ -11,6 +11,7 @@ public class PlayerManStuff : MonoBehaviour
 
     public GameObject net;
     public Camera fpsCam;
+    public BugManager bugManager;
     
 
     private bool hasNet;
@@ -34,7 +35,6 @@ public class PlayerManStuff : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire1")) {
-            Debug.Log("Here3");
             Click();
         }
         PlayerMovement();
@@ -87,8 +87,11 @@ public class PlayerManStuff : MonoBehaviour
         }
         else if (target.transform.CompareTag("Bug") && hasNet) 
         {
-            
-            
+            /*
+            ADD BUG MANAGER HERE
+            */
+            //bugManager.AddBugCaught(BugManager.Bug.Worm);
+            Destroy(target.transform.gameObject);
         }
     }
 }
