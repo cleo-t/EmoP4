@@ -31,6 +31,6 @@ public class MoveCamera : MonoBehaviour
         pitch -= moveY;
         pitch = Mathf.Clamp(pitch, -90f, 90f);
         transform.localRotation = Quaternion.Euler(pitch, 0, 0);
-        Debug.Log(yaw + ", " + pitch);
+        //Debug.Log(yaw + ", " + pitch);
     }
 }
