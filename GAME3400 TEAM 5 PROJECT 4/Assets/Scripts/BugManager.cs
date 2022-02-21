@@ -17,7 +17,8 @@ public class BugManager : MonoBehaviour
     [SerializeField]
     private List<BugPrefabPair> bugPrefabs;
 
-    private HashSet<Bug> bugsCaught;
+    private HashSet<Bug> bugTypesCaught;
+    private List<Bug> bugsCaught;
     private Dictionary<Bug, GameObject> bugPrefabMap;
 
     private void Awake()
@@ -44,7 +45,7 @@ public class BugManager : MonoBehaviour
 
     void Start()
     {
-        this.bugsCaught = new HashSet<Bug>();
+        this.bugTypesCaught = new HashSet<Bug>();
         this.bugPrefabMap = new Dictionary<Bug, GameObject>();
         foreach(BugPrefabPair pair in this.bugPrefabs)
         {
@@ -54,7 +55,13 @@ public class BugManager : MonoBehaviour
 
     public void AddBugCaught(Bug bug)
     {
+        this.bugTypesCaught.Add(bug);
         this.bugsCaught.Add(bug);
+    }
+
+    public List<Bug> GetBugTypesCaught()
+    {
+        return new List<Bug>(this.bugTypesCaught);
     }
 
     public List<Bug> GetBugsCaught()
