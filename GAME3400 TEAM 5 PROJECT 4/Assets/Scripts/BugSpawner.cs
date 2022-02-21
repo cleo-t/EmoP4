@@ -45,6 +45,8 @@ public class BugSpawner : MonoBehaviour
             newEntry.relativeOdds = currentOddsSum;
             this.realBugSpawnOdds.Add(newEntry);
         }
+
+        this.SpawnBug();
     }
 
     private BugManager.Bug PickRandomBug()
