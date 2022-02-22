@@ -21,17 +21,11 @@ public class PageTurner : MonoBehaviour
     [SerializeField]
     private GameObject turnyPageObject;
 
-    private GameObject page1Object;
-    private GameObject page2Object;
-
     private bool turning;
     private int index;
 
     void Start()
     {
-        this.page1Object = this.page1.gameObject;
-        this.page2Object = this.page2.gameObject;
-
         this.turning = false;
         this.index = (int)this.startPageIndex;
 
