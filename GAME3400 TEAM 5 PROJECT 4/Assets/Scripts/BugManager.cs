@@ -26,6 +26,7 @@ public class BugManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
         } else
         {
             Destroy(this);
@@ -34,7 +35,8 @@ public class BugManager : MonoBehaviour
 
     public enum Bug
     {
-        Worm = 0,
+        None = -1,
+        Worm,
         Butterfly,
         Stickbug,
         Ants,
