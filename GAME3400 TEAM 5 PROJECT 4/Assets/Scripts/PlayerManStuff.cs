@@ -93,6 +93,10 @@ public class PlayerManStuff : MonoBehaviour
             //bugManager.AddBugCaught(BugManager.Bug.Worm);
             Destroy(target.transform.gameObject);
         }
+        else 
+        {
+
+        }
     }
 }
 
