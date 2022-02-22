@@ -9,16 +9,20 @@ public class PlayerManStuff : MonoBehaviour
     public float jumpHeight = 5;
     public float range = 100f;
 
+    public int jarCounter;
+
     public GameObject net;
     public Camera fpsCam;
     public BugManager bugManager;
-    
 
+
+    
     private bool hasNet;
 
     private Vector3 moveDirection;
     private Vector3 input;
     private CharacterController _controller;
+    private List<BugManager.Bug> playerInvetory;
 
 
     
@@ -91,7 +95,14 @@ public class PlayerManStuff : MonoBehaviour
             ADD BUG MANAGER HERE
             */
             //bugManager.AddBugCaught(BugManager.Bug.Worm);
+
+            
+            
             Destroy(target.transform.gameObject);
+        }
+        else 
+        {
+
         }
     }
 }
