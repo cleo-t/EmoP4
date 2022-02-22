@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Net
   - Bug
+  - SceneFade
   layers:
   - Default
   - TransparentFX

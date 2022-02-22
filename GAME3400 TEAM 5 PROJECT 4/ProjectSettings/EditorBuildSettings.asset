@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FadeTest.unity
+    guid: 3f26dc10f337eb446aafa345f19ff096
   m_configObjects: {}
