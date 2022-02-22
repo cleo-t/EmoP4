@@ -60,9 +60,9 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public BugManager.Bug GetFrontBug()
+    public List<BugManager.Bug> GetBugs()
     {
-        return this.bugsOnHand.Count > 0 ? this.bugsOnHand[0] : BugManager.Bug.None;
+        return new List<BugManager.Bug>(this.bugsOnHand);
     }
 
     public void PopFrontBug()
