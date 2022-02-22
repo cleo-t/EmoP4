@@ -77,7 +77,7 @@ public class PageTurner : MonoBehaviour
             {
                 float degStep = dDeg * Time.deltaTime;
                 angle += degStep;
-                this.turnyPageObject.transform.localRotation *= Quaternion.AngleAxis(-degStep, -Vector3.forward);
+                this.turnyPageObject.transform.localRotation *= Quaternion.AngleAxis(degStep, Vector3.forward);
                 yield return null;
             }
 
