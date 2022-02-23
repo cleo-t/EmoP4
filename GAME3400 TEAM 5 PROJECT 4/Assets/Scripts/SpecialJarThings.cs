@@ -77,6 +77,7 @@ public class SpecialJarThings : MonoBehaviour
         if (!placedDown)
         {
             model.SetActive(false);
+            glowLight.SetActive(false);
             hovering = false;
         }
     }
