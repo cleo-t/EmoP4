@@ -52,7 +52,8 @@ public class InventoryManager : MonoBehaviour
         if (this.jars <= 0)
         {
             return false;
-        } else
+        }
+        else
         {
             this.jars--;
             this.bugsOnHand.Add(bugType);
@@ -74,5 +75,17 @@ public class InventoryManager : MonoBehaviour
         BugManager.Bug bug = this.bugsOnHand[0];
         this.bugsOnHand.RemoveAt(0);
         BugManager.instance.AddBugCaught(bug);
+    }
+
+    public bool HasBugs()
+    {
+        if (bugsOnHand != null && bugsOnHand.Count > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

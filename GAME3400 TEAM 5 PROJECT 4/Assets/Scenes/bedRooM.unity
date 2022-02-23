@@ -16954,10 +16954,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3325984492141461527, guid: 30870bd8faf64400e973c56564d6cd39, type: 3}
-      propertyPath: range
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325984492141461527, guid: 30870bd8faf64400e973c56564d6cd39, type: 3}
       propertyPath: bedroom
       value: 
       objectReference: {fileID: 1645799730}
@@ -23435,7 +23431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1525214970}
   m_Layer: 0
-  m_Name: SpecailJar
+  m_Name: SpecialJars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23713,17 +23709,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575446822}
   m_Mesh: {fileID: 4068373912626513877, guid: e2c16728de307424fb2dc92aec893a53, type: 3}
---- !u!114 &1587222498 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6305614980970863555, guid: 61caa41d39d1ea14891a77149feed18a, type: 3}
-  m_PrefabInstance: {fileID: 1809819952}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f973e2d7f00544f99c56daad196852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1597189416
 GameObject:
   m_ObjectHideFlags: 0
@@ -25720,7 +25705,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-61856
+  m_Name: pb_Mesh-5594
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
