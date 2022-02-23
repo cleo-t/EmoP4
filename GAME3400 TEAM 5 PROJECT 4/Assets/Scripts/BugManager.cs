@@ -50,6 +50,7 @@ public class BugManager : MonoBehaviour
     {
         this.bugTypesCaught = new HashSet<Bug>();
         this.bugPrefabMap = new Dictionary<Bug, GameObject>();
+        this.bugsCaught = new List<Bug>();
         foreach(BugPrefabPair pair in this.bugPrefabs)
         {
             this.bugPrefabMap.Add(pair.bugType, pair.prefab);
