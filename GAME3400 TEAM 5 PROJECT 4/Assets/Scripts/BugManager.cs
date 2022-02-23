@@ -42,7 +42,8 @@ public class BugManager : MonoBehaviour
         Ants,
         Snail,
         Ladybug,
-        Bee
+        Bee,
+        Spider
     }
 
     void Start()
