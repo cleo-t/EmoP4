@@ -34,6 +34,7 @@ public class PlayerManStuff : MonoBehaviour
         net.SetActive(false);
         crossHair.SetActive(true);
         _controller = GetComponent<CharacterController>();
+
         if (bedroom != null)
         {
             ohNo = true;
@@ -101,10 +102,6 @@ public class PlayerManStuff : MonoBehaviour
                 net.SetActive(true);
                 Destroy(target.transform.gameObject);
             }
-
-
-
-
             else if (target.transform.CompareTag("Bug") && InventoryManager.instance.hasNet)
             {
                 BugStuff bug = target.transform.gameObject.GetComponent<BugStuff>();
@@ -115,8 +112,6 @@ public class PlayerManStuff : MonoBehaviour
                 {
                     Destroy(target.transform.gameObject);
                 }
-
-                
             }
             else if (target.transform.CompareTag("Jar"))
             {
@@ -160,6 +155,7 @@ public class PlayerManStuff : MonoBehaviour
 
             lastLookTarget = target;
         }
+
         if(hit.collider == null && lastLookTarget != null && lastLookTarget.transform.CompareTag("JarSpecial"))
         {
             SpecialJarThings jar = lastLookTarget.GetComponent<SpecialJarThings>();

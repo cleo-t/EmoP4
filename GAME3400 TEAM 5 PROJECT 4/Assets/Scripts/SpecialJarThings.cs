@@ -7,10 +7,12 @@ public class SpecialJarThings : MonoBehaviour
 {
 
     public float lightOnDistance = 2f;
+    public float bugHeightControl = 2f;
 
     public GameObject player;
     public GameObject model;
-    public GameObject light;
+    public GameObject glowLight;
+    public GameObject spotLight;
 
     public MeshRenderer jarGlassMesh;
     public MeshRenderer jarLidMesh;
@@ -25,6 +27,8 @@ public class SpecialJarThings : MonoBehaviour
     void Awake() 
     {
         HoveringOff();
+        spotLight.SetActive(false);
+        glowLight.SetActive(false);
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
@@ -41,14 +45,18 @@ public class SpecialJarThings : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if (distanceToPlayer <= lightOnDistance)
+        if (!placedDown)
         {
-            light.SetActive(true);
-        }
-        else if (!hovering)
-        {
-            light.SetActive(false);
+            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+
+            if (distanceToPlayer <= lightOnDistance)
+            {
+                spotLight.SetActive(true);
+            }
+            else if (!hovering)
+            {
+                spotLight.SetActive(false);
+            }
         }
         
     }
@@ -57,8 +65,9 @@ public class SpecialJarThings : MonoBehaviour
     {
         if (!placedDown)
         {
+            spotLight.SetActive(false);
             model.SetActive(true);
-            light.SetActive(true);
+            glowLight.SetActive(true);
             hovering = true;
         }
     }
@@ -68,6 +77,7 @@ public class SpecialJarThings : MonoBehaviour
         if (!placedDown)
         {
             model.SetActive(false);
+            glowLight.SetActive(false);
             hovering = false;
         }
     }
@@ -83,17 +93,19 @@ public class SpecialJarThings : MonoBehaviour
         GameObject bug = Instantiate(BugManager.instance.GetBugPrefab(bugType), transform.position, transform.rotation);
 
         Vector3 scaleChange = new Vector3(.25f, .25f, .25f);
+        Vector3 posChange = new Vector3(transform.position.x, transform.position.y - bugHeightControl, transform.position.z);
 
         bug.transform.localScale = scaleChange;
+        bug.transform.position = posChange;
+
         
         bug.GetComponent<BugStuff>().PlacedInJar();
 
-        Debug.Log(bug.name);
-        Debug.Log(bug.GetComponent<BugStuff>().inJar);
 
         // make objecter perminet
         model.SetActive(true);
-        light.SetActive(false);
+        glowLight.SetActive(false);
+        spotLight.SetActive(false);
 
         placedDown = true;
     }
