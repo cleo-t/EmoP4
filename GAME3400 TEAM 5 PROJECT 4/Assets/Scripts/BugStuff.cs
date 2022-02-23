@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BugStuff : MonoBehaviour
 {
+
+    public BugManager.BugPrefabPair bugInfo;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +18,10 @@ public class BugStuff : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public BugManager.Bug GetBugType()
+    {
+        return bugInfo.bugType;
     }
 }

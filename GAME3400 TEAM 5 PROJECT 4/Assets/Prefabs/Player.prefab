@@ -821,10 +821,10 @@ MonoBehaviour:
   moveSpeed: 10
   gravity: 9.81
   jumpHeight: 5
-  range: 100
+  range: 5
+  blinkTime: 0.1
   net: {fileID: 3325984492311897946}
   fpsCam: {fileID: 3325984493021764705}
-  bugManager: {fileID: 0}
   bedroom: {fileID: 0}
   crossHair: {fileID: 3325984491913983297}
 --- !u!1 &3325984492311897946
