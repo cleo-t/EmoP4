@@ -55,27 +55,47 @@ public class SpecialJarThings : MonoBehaviour
 
     public void HoveringOn() 
     {
-        model.SetActive(true);
-        light.SetActive(true);
-        hovering = true;
-
+        if (!placedDown)
+        {
+            model.SetActive(true);
+            light.SetActive(true);
+            hovering = true;
+        }
     }
 
     public void HoveringOff() 
     {
-        model.SetActive(false);
-        hovering = false;
-
+        if (!placedDown)
+        {
+            model.SetActive(false);
+            hovering = false;
+        }
     }
 
     public void Place(BugManager.Bug bugType)
     {
         // Change object material
+        
         jarGlassMesh.material = glassMaterial;
         jarLidMesh.material = lidMaterial;
 
         // Add Worm
-        // make objecter perminet 
+        GameObject bug = Instantiate(BugManager.instance.GetBugPrefab(bugType), transform.position, transform.rotation);
+
+        Vector3 scaleChange = new Vector3(.25f, .25f, .25f);
+
+        bug.transform.localScale = scaleChange;
+        
+        bug.GetComponent<BugStuff>().PlacedInJar();
+
+        Debug.Log(bug.name);
+        Debug.Log(bug.GetComponent<BugStuff>().inJar);
+
+        // make objecter perminet
+        model.SetActive(true);
+        light.SetActive(false);
+
+        placedDown = true;
     }
 
     public static implicit operator SpecialJarThings(GameObject v)

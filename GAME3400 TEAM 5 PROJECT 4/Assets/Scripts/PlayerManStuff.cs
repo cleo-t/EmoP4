@@ -93,35 +93,46 @@ public class PlayerManStuff : MonoBehaviour
         RaycastHit target;
         Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out target, range);
 
-        
-        if (target.transform.CompareTag("Net")) 
+        if (target.collider != null)
         {
-            InventoryManager.instance.hasNet = true;
-            net.SetActive(true);
-            Destroy(target.transform.gameObject);
-        }
-        else if (target.transform.CompareTag("Bug") && InventoryManager.instance.hasNet) 
-        {
-            BugStuff bug = target.transform.gameObject.GetComponent<BugStuff>();
+            if (target.transform.CompareTag("Net"))
+            {
+                InventoryManager.instance.hasNet = true;
+                net.SetActive(true);
+                Destroy(target.transform.gameObject);
+            }
 
-            InventoryManager.instance.BugCaught(bug.GetBugType());
-            
-            Destroy(target.transform.gameObject);
-        }
-        else if (target.transform.CompareTag("Jar"))
-        {
-            InventoryManager.instance.AddJar();
-            Destroy(target.transform.gameObject);
-        }
-        else if (target.transform.CompareTag("JarSpecial") && InventoryManager.instance.HasBugs())
-        {
-            SpecialJarThings jar = target.transform.gameObject.GetComponent<SpecialJarThings>();
-            jar.Place(InventoryManager.instance.PopFrontBug());
 
-        }
-        else 
-        {
 
+
+            else if (target.transform.CompareTag("Bug") && InventoryManager.instance.hasNet)
+            {
+                BugStuff bug = target.transform.gameObject.GetComponent<BugStuff>();
+                BugManager.Bug bugType = bug.GetBugType();
+
+
+                if (InventoryManager.instance.BugCaught(bugType))
+                {
+                    Destroy(target.transform.gameObject);
+                }
+
+                
+            }
+            else if (target.transform.CompareTag("Jar"))
+            {
+                InventoryManager.instance.AddJar();
+                
+                Destroy(target.transform.gameObject);
+            }
+            else if (target.transform.CompareTag("JarSpecial") && InventoryManager.instance.HasBugs())
+            {
+                SpecialJarThings jar = target.transform.gameObject.GetComponent<SpecialJarThings>();
+                jar.Place(InventoryManager.instance.PopFrontBug());
+            }
+            else
+            {
+
+            }
         }
     }
 

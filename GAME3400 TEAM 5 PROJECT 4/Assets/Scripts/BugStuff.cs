@@ -5,33 +5,46 @@ using UnityEngine;
 public class BugStuff : MonoBehaviour
 {
     Vector3 initialBugPosition;
-    public BugManager.BugPrefabPair bugInfo;
+
+    public BugManager.Bug bugType;
+
+    public bool inJar;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        inJar = false;
         initialBugPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (bugInfo.bugType == BugManager.Bug.Butterfly)
+        switch (bugType)
         {
-            ButterflyMove();
+
+            default:
+                break;
         }
-        else if (bugInfo.bugType == BugManager.Bug.Bee)
+        if (!inJar)
         {
-            BeeMove(); // [ v/ ]
-        }
-        else if (bugInfo.bugType == BugManager.Bug.Ladybug || bugInfo.bugType == BugManager.Bug.Stickbug)
-        {
-            ClimbTree(); // [ v/ ]
-        }
-        else if (bugInfo.bugType == BugManager.Bug.Worm)
-        {
-            WormMove(); // [ v/ ]
+            if (bugType == BugManager.Bug.Butterfly)
+            {
+                ButterflyMove();
+            }
+            else if (bugType == BugManager.Bug.Bee)
+            {
+                BeeMove(); // [ v/ ]
+            }
+            else if (bugType == BugManager.Bug.Ladybug || bugType == BugManager.Bug.Stickbug)
+            {
+                ClimbTree(); // [ v/ ]
+            }
+            else if (bugType == BugManager.Bug.Worm)
+            {
+                WormMove(); // [ v/ ]
+            }
         }
     }
 
@@ -118,8 +131,13 @@ public class BugStuff : MonoBehaviour
         transform.position = Vector3.Lerp(front, back, t3);
     }
 
+    public void PlacedInJar()
+    {
+        inJar = true;
+    }
+
     public BugManager.Bug GetBugType()
     {
-        return bugInfo.bugType;
+        return bugType;
     }
 }
