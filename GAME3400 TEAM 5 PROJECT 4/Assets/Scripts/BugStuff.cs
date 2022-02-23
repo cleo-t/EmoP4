@@ -23,7 +23,24 @@ public class BugStuff : MonoBehaviour
     {
         switch (bugType)
         {
-
+            case BugManager.Bug.None:
+                break;
+            case BugManager.Bug.Worm:
+                break;
+            case BugManager.Bug.Butterfly:
+                break;
+            case BugManager.Bug.Stickbug:
+                break;
+            case BugManager.Bug.Ants:
+                break;
+            case BugManager.Bug.Snail:
+                break;
+            case BugManager.Bug.Ladybug:
+                break;
+            case BugManager.Bug.Bee:
+                break;
+            case BugManager.Bug.Spider:
+                break;
             default:
                 break;
         }
