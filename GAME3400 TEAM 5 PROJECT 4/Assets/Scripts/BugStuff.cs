@@ -10,57 +10,52 @@ public class BugStuff : MonoBehaviour
 
     public bool inJar;
 
+    private void Awake()
+    {
+        inJar = false;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        inJar = false;
+        
         initialBugPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (bugType)
-        {
-            case BugManager.Bug.None:
-                break;
-            case BugManager.Bug.Worm:
-                break;
-            case BugManager.Bug.Butterfly:
-                break;
-            case BugManager.Bug.Stickbug:
-                break;
-            case BugManager.Bug.Ants:
-                break;
-            case BugManager.Bug.Snail:
-                break;
-            case BugManager.Bug.Ladybug:
-                break;
-            case BugManager.Bug.Bee:
-                break;
-            case BugManager.Bug.Spider:
-                break;
-            default:
-                break;
-        }
         if (!inJar)
         {
-            if (bugType == BugManager.Bug.Butterfly)
+            switch (bugType)
             {
-                ButterflyMove();
-            }
-            else if (bugType == BugManager.Bug.Bee)
-            {
-                BeeMove(); // [ v/ ]
-            }
-            else if (bugType == BugManager.Bug.Ladybug || bugType == BugManager.Bug.Stickbug)
-            {
-                ClimbTree(); // [ v/ ]
-            }
-            else if (bugType == BugManager.Bug.Worm)
-            {
-                WormMove(); // [ v/ ]
+                case BugManager.Bug.None:
+                    break;
+                case BugManager.Bug.Worm:
+                    Debug.Log("Here 1");
+                    Debug.Log(inJar);
+                    WormMove();
+                    break;
+                case BugManager.Bug.Butterfly:
+                    ButterflyMove();
+                    break;
+                case BugManager.Bug.Stickbug:
+                    ClimbTree();
+                    break;
+                case BugManager.Bug.Ants:
+                    break;
+                case BugManager.Bug.Snail:
+                    break;
+                case BugManager.Bug.Ladybug:
+                    ClimbTree();
+                    break;
+                case BugManager.Bug.Bee:
+                    BeeMove();
+                    break;
+                case BugManager.Bug.Spider:
+                    break;
+                default:
+                    break;
             }
         }
     }

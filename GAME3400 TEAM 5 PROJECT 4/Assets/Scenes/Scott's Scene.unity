@@ -2171,6 +2171,10 @@ PrefabInstance:
       propertyPath: glassMaterial
       value: 
       objectReference: {fileID: 2100000, guid: cca2d2de4b1d71840a772b9e6fd66075, type: 2}
+    - target: {fileID: 5821331579793943778, guid: d4436ee0ae2304aeeb48df1adc712d7f, type: 3}
+      propertyPath: bugHeightControl
+      value: 0.14
+      objectReference: {fileID: 0}
     - target: {fileID: 5821331579793943779, guid: d4436ee0ae2304aeeb48df1adc712d7f, type: 3}
       propertyPath: m_RootOrder
       value: 5
