@@ -8,21 +8,36 @@ public class PlayerManStuff : MonoBehaviour
     public float gravity = 9.81f;
     public float jumpHeight = 5;
     public float range = 100f;
+    public float blinkTime = .1f;
+
 
     public GameObject net;
     public Camera fpsCam;
-    public BugManager bugManager;
+    public GameObject bedroom;
+    public GameObject crossHair;
 
+    private bool ohNo = false;
+    private float nextTime = 0f;
 
     private Vector3 moveDirection;
     private Vector3 input;
     private CharacterController _controller;
+    private GameObject lastLookTarget;
+    
+
+    
 
     // Start is called before the first frame update
     void Awake()
     {
+        ohNo = false;
         net.SetActive(false);
+        crossHair.SetActive(true);
         _controller = GetComponent<CharacterController>();
+        if (bedroom != null)
+        {
+            ohNo = true;
+        }
     }
 
     // Update is called once per frame
@@ -30,6 +45,11 @@ public class PlayerManStuff : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1")) {
             Click();
+        }
+        if (ohNo && Time.time >=  nextTime) {
+            nextTime = Time.time + blinkTime;
+            Looking();
+
         }
         PlayerMovement();
     }
@@ -73,6 +93,7 @@ public class PlayerManStuff : MonoBehaviour
         RaycastHit target;
         Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out target, range);
 
+        
         if (target.transform.CompareTag("Net")) 
         {
             InventoryManager.instance.hasNet = true;
@@ -90,13 +111,47 @@ public class PlayerManStuff : MonoBehaviour
         }
         else if (target.transform.CompareTag("Jar"))
         {
-            
-
+            //Debug.Log("Here1");
+            InventoryManager.instance.AddJar();
+            Destroy(target.transform.gameObject);
         }
         else 
         {
 
         }
+    }
+
+    private void Looking()
+    {
+        RaycastHit hit;
+        Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range);
+
+        if (hit.collider != null)
+        {
+            GameObject target = hit.transform.gameObject;
+
+            if (target.transform.CompareTag("JarSpecial") && lastLookTarget != null && lastLookTarget != target)
+            {
+                SpecialJarThings jar = target.GetComponent<SpecialJarThings>();
+                jar.HoveringOn();
+            }
+
+            if (lastLookTarget != null && lastLookTarget.transform.CompareTag("JarSpecial") && lastLookTarget != target)
+            {
+                SpecialJarThings jar = lastLookTarget.GetComponent<SpecialJarThings>();
+                jar.HoveringOff();
+            }
+
+
+            lastLookTarget = target;
+        }
+        if(hit.collider == null && lastLookTarget != null && lastLookTarget.transform.CompareTag("JarSpecial"))
+        {
+            SpecialJarThings jar = lastLookTarget.GetComponent<SpecialJarThings>();
+            jar.HoveringOff();
+            lastLookTarget = null;
+        }
+        
     }
 }
 
