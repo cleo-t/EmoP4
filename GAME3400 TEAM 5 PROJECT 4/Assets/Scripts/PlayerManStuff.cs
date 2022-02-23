@@ -115,6 +115,11 @@ public class PlayerManStuff : MonoBehaviour
             InventoryManager.instance.AddJar();
             Destroy(target.transform.gameObject);
         }
+        else if (target.transform.CompareTag("JarSpecial") && InventoryManager.instance.HasBugs())
+        {
+            
+
+        }
         else 
         {
 

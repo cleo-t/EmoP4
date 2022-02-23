@@ -41,9 +41,10 @@ public class SpecialJarThings : MonoBehaviour
         
     }
 
-    public void Placed()
+    public void Placed(BugManager.Bug bugType)
     {
         // Change object material
+        
         // Add Worm
         // make objecter perminet 
     }
