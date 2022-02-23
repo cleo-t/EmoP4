@@ -12,8 +12,15 @@ public class SpecialJarThings : MonoBehaviour
     public GameObject model;
     public GameObject light;
 
+    public MeshRenderer jarGlassMesh;
+    public MeshRenderer jarLidMesh;
+
+    public Material glassMaterial;
+    public Material lidMaterial;
+
 
     private bool hovering;
+    private bool placedDown;
 
     void Awake() 
     {
@@ -61,10 +68,12 @@ public class SpecialJarThings : MonoBehaviour
 
     }
 
-    public void Placed(BugManager.Bug bugType)
+    public void Place(BugManager.Bug bugType)
     {
         // Change object material
-        
+        jarGlassMesh.material = glassMaterial;
+        jarLidMesh.material = lidMaterial;
+
         // Add Worm
         // make objecter perminet 
     }

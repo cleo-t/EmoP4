@@ -102,22 +102,21 @@ public class PlayerManStuff : MonoBehaviour
         }
         else if (target.transform.CompareTag("Bug") && InventoryManager.instance.hasNet) 
         {
-            /*
-            ADD BUG MANAGER HERE
-            */
-            //bugManager.AddBugCaught(BugManager.Bug.Worm);
+            BugStuff bug = target.transform.gameObject.GetComponent<BugStuff>();
+
+            InventoryManager.instance.BugCaught(bug.GetBugType());
             
             Destroy(target.transform.gameObject);
         }
         else if (target.transform.CompareTag("Jar"))
         {
-            //Debug.Log("Here1");
             InventoryManager.instance.AddJar();
             Destroy(target.transform.gameObject);
         }
         else if (target.transform.CompareTag("JarSpecial") && InventoryManager.instance.HasBugs())
         {
-            
+            SpecialJarThings jar = target.transform.gameObject.GetComponent<SpecialJarThings>();
+            jar.Place(InventoryManager.instance.PopFrontBug());
 
         }
         else 

@@ -66,15 +66,12 @@ public class InventoryManager : MonoBehaviour
         return new List<BugManager.Bug>(this.bugsOnHand);
     }
 
-    public void PopFrontBug()
+    public BugManager.Bug PopFrontBug()
     {
-        if (this.bugsOnHand.Count <= 0)
-        {
-            return;
-        }
         BugManager.Bug bug = this.bugsOnHand[0];
         this.bugsOnHand.RemoveAt(0);
         BugManager.instance.AddBugCaught(bug);
+        return bug;
     }
 
     public bool HasBugs()
