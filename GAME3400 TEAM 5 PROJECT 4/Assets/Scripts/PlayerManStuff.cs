@@ -17,15 +17,10 @@ public class PlayerManStuff : MonoBehaviour
     private Vector3 moveDirection;
     private Vector3 input;
     private CharacterController _controller;
-    private List<BugManager.Bug> playerInvetory;
-
-
-    
 
     // Start is called before the first frame update
     void Awake()
     {
-        hasNet = false;
         net.SetActive(false);
         _controller = GetComponent<CharacterController>();
     }
@@ -80,11 +75,11 @@ public class PlayerManStuff : MonoBehaviour
 
         if (target.transform.CompareTag("Net")) 
         {
-            hasNet = true;
+            InventoryManager.instance.hasNet = true;
             net.SetActive(true);
             Destroy(target.transform.gameObject);
         }
-        else if (target.transform.CompareTag("Bug") && hasNet) 
+        else if (target.transform.CompareTag("Bug") && InventoryManager.instance.hasNet) 
         {
             /*
             ADD BUG MANAGER HERE
