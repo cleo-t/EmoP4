@@ -18,6 +18,8 @@ public class ManageScenes : MonoBehaviour
 
     public static ManageScenes instance;
 
+    private bool fading;
+
     private void Awake()
     {
         if (instance == null)
@@ -31,6 +33,7 @@ public class ManageScenes : MonoBehaviour
 
     void Start()
     {
+        this.fading = false;
         GameObject sceneFaderObject = GameObject.FindGameObjectWithTag(this.sceneFaderTag);
         if (sceneFaderObject != null)
         {
@@ -47,11 +50,14 @@ public class ManageScenes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float currentA = this.sceneFader.color.a;
-        float dA = (Time.deltaTime / this.fadeTime) * Mathf.Sign(this.targetOpacity - currentA);
-        float newA = currentA + dA;
-        Mathf.Clamp(newA, 0, 1);
-        this.SetFaderOpacity(Mathf.Clamp(newA, 0, 1));
+        if (this.fading)
+        {
+            float currentA = this.sceneFader.color.a;
+            float dA = (Time.deltaTime / this.fadeTime) * Mathf.Sign(this.targetOpacity - currentA);
+            float newA = currentA + dA;
+            Mathf.Clamp(newA, 0, 1);
+            this.SetFaderOpacity(Mathf.Clamp(newA, 0, 1));
+        }
     }
 
     private void SetFaderOpacity(float a)
@@ -69,10 +75,12 @@ public class ManageScenes : MonoBehaviour
     
     private IEnumerator WaitForFadeThenSwitch(string sceneName)
     {
+        this.fading = true;
         while(this.sceneFader.color.a < 0.999f)
         {
             yield return null;
         }
+        this.fading = false;
         yield return new WaitForSecondsRealtime(this.pauseTime);
         SceneManager.LoadScene(sceneName);
     }
