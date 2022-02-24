@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FadeTest.unity
     guid: 3f26dc10f337eb446aafa345f19ff096
   - enabled: 1
@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BackyardGreybox.unity
     guid: cd46dcfeb96cf714a8d972e6f15a932b
+  - enabled: 1
+    path: Assets/Scenes/NewBackyard.unity
+    guid: 77630ad5574b3fb478dadded17113a17
+  - enabled: 1
+    path: Assets/Scenes/TrueBackyard.unity
+    guid: 70180696f94722e44a30184586f2a9e5
   m_configObjects: {}
