@@ -111,7 +111,6 @@ public class BugSpawner : MonoBehaviour
             case BugManager.Bug.Stickbug:
                 break;
             case BugManager.Bug.Ants:
-                obj.transform.Rotate(0, 44.145f, 0);
                 break;
             case BugManager.Bug.Snail:
                 break;
