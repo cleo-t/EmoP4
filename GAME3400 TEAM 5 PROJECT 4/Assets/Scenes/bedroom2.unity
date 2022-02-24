@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7619173, g: 0.7857207, b: 0.7305091, a: 1}
+  m_IndirectSpecularColor: {r: 0.76191753, g: 0.78572065, b: 0.73050946, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 397555da51e54024fbcfd95b1fe8e021, type: 2}
   m_LightingSettings: {fileID: 69977838}
 --- !u!196 &4
 NavMeshSettings:
@@ -10565,8 +10565,14 @@ PrefabInstance:
       propertyPath: targetScene
       value: BackyardGreybox
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2641275515478204150, guid: 485d3fa2b58cf1440b7d8b82f7d9cd52, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 485d3fa2b58cf1440b7d8b82f7d9cd52, type: 3}
+--- !u!1 &529421228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8585972047662094355, guid: 485d3fa2b58cf1440b7d8b82f7d9cd52, type: 3}
+  m_PrefabInstance: {fileID: 529421227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &560179214
 GameObject:
   m_ObjectHideFlags: 0
@@ -35617,6 +35623,51 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &2131031403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2131031405}
+  - component: {fileID: 2131031404}
+  m_Layer: 0
+  m_Name: DoorLock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2131031404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131031403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f904317fddec2a84cb8a2a10b1322201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToDisable: {fileID: 529421228}
+  requiredJars: 3
+--- !u!4 &2131031405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131031403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &177465761907309781
 PrefabInstance:
   m_ObjectHideFlags: 0
