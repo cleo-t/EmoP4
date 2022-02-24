@@ -62,6 +62,11 @@ public class SpecialJarThings : MonoBehaviour
         
     }
 
+    public bool isPlaced()
+    {
+        return placedDown;
+    }
+
     public void HoveringOn() 
     {
         if (!placedDown)

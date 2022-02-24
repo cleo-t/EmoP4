@@ -139,7 +139,10 @@ public class PlayerManStuff : MonoBehaviour
             else if (target.transform.CompareTag("JarSpecial") && InventoryManager.instance.HasBugs())
             {
                 SpecialJarThings jar = target.transform.gameObject.GetComponent<SpecialJarThings>();
-                jar.Place(InventoryManager.instance.PopFrontBug());
+                if (!jar.isPlaced())
+                {
+                    jar.Place(InventoryManager.instance.PopFrontBug());
+                }
             }
             else
             {
