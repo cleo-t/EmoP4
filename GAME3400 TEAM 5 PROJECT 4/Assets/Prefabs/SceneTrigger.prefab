@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8585972047662094357}
   - component: {fileID: 8585972047662094354}
   - component: {fileID: 8868220057654626289}
-  - component: {fileID: 2641275515478204150}
   m_Layer: 0
   m_Name: SceneTrigger
   m_TagString: Untagged
@@ -76,15 +75,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScene: 
---- !u!114 &2641275515478204150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8585972047662094355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f904317fddec2a84cb8a2a10b1322201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
