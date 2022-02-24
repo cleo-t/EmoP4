@@ -19,6 +19,7 @@ public class PlayerManStuff : MonoBehaviour
 
     public AudioClip swingSound;
     public AudioClip jarSound;
+    public AudioClip outOfJars;
 
     private bool ohNo = false;
     private float nextTime = 0f;
@@ -116,10 +117,15 @@ public class PlayerManStuff : MonoBehaviour
 
                 if (InventoryManager.instance.BugCaught(bugType))
                 {
-                    PlaySoundAfterSeconds(2);
+                    PlaySoundAfterSeconds(.5f);
 
                     Destroy(target.transform.gameObject);
+                    if (InventoryManager.instance.GetJarCount() == 0)
+                    {
+                        AudioSource.PlayClipAtPoint(outOfJars, Camera.main.transform.position);
+                    }
                 }
+
             }
             else if (target.transform.CompareTag("Jar"))
             {

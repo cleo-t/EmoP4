@@ -32,8 +32,6 @@ public class BugStuff : MonoBehaviour
                 case BugManager.Bug.None:
                     break;
                 case BugManager.Bug.Worm:
-                    Debug.Log("Here 1");
-                    Debug.Log(inJar);
                     WormMove();
                     break;
                 case BugManager.Bug.Butterfly:

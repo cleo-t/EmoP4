@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PageTurner : MonoBehaviour
 {
+
+    public AudioClip pageFliip;
+
     [SerializeField]
     private List<Texture> pageTextures;
     [SerializeField]
@@ -65,6 +68,7 @@ public class PageTurner : MonoBehaviour
 
     private IEnumerator TurnPage()
     {
+        AudioSource.PlayClipAtPoint(pageFliip, Camera.main.transform.position);
         if (!this.turning)
         {
             this.turning = true;
