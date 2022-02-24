@@ -824,9 +824,11 @@ MonoBehaviour:
   range: 5
   blinkTime: 0.1
   net: {fileID: 7505559946897381528}
-  fpsCam: {fileID: 3325984493021764705}
   bedroom: {fileID: 0}
   crossHair: {fileID: 3325984491913983297}
+  fpsCam: {fileID: 3325984493021764705}
+  swingSound: {fileID: 8300000, guid: 31d7458c9e5824f738dd36432109d62d, type: 3}
+  jarSound: {fileID: 8300000, guid: a745479bc8f084eab887fc7855f5046a, type: 3}
 --- !u!1 &3325984492698647191
 GameObject:
   m_ObjectHideFlags: 0

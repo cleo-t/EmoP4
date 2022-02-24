@@ -164,6 +164,7 @@ MonoBehaviour:
   jarLidMesh: {fileID: 85069791891213295}
   glassMaterial: {fileID: 2100000, guid: cca2d2de4b1d71840a772b9e6fd66075, type: 2}
   lidMaterial: {fileID: 2100000, guid: b8d6ff5fb20ccd34aa38f6dc1b6c1340, type: 2}
+  placeClip: {fileID: 8300000, guid: a745479bc8f084eab887fc7855f5046a, type: 3}
 --- !u!1 &5821331581072354471
 GameObject:
   m_ObjectHideFlags: 0
