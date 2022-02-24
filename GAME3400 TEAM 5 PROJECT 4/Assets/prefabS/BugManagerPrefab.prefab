@@ -43,4 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f973e2d7f00544f99c56daad196852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bugPrefabs: []
+  bugPrefabs:
+  - bugType: 0
+    prefab: {fileID: 8802285667426129840, guid: 513550d3a43a34df494177b5714a07e0, type: 3}
+  - bugType: 1
+    prefab: {fileID: 3177549204123796458, guid: 92350e0e355f84b2fb8e10c2a3beb231, type: 3}
+  - bugType: 3
+    prefab: {fileID: 2958487202214980189, guid: f0f69f8a076464a09a7cb5886b5ea658, type: 3}
+  - bugType: 4
+    prefab: {fileID: 5532544087922564380, guid: 1c55e98779ae94936b2d1ccb7b23b864, type: 3}
+  - bugType: 5
+    prefab: {fileID: 8750385971521226618, guid: 893c0da7a09044eeaae5f70c742ff2d2, type: 3}
+  - bugType: 6
+    prefab: {fileID: 9066587703813129012, guid: e05c56b6b22a643e7bd4e473651efdda, type: 3}
+  - bugType: 7
+    prefab: {fileID: 5349832066042833468, guid: 629bfdce543314d80b1f039109137847, type: 3}
