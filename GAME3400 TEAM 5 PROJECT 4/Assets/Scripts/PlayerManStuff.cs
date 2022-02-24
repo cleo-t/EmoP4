@@ -117,7 +117,7 @@ public class PlayerManStuff : MonoBehaviour
 
                 if (InventoryManager.instance.BugCaught(bugType))
                 {
-                    PlaySoundAfterSeconds(.5f);
+                    StartCoroutine(PlaySoundAfterSeconds(.5f));
 
                     Destroy(target.transform.gameObject);
                     if (InventoryManager.instance.GetJarCount() == 0)
@@ -145,7 +145,7 @@ public class PlayerManStuff : MonoBehaviour
         }
     }
 
-    private IEnumerable PlaySoundAfterSeconds(float sec)
+    private IEnumerator PlaySoundAfterSeconds(float sec)
     {
         yield return new WaitForSeconds(sec);
         AudioSource.PlayClipAtPoint(jarSound, Camera.main.transform.position);
