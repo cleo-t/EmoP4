@@ -20,6 +20,8 @@ public class SpecialJarThings : MonoBehaviour
     public Material glassMaterial;
     public Material lidMaterial;
 
+    public AudioClip placeClip;
+
 
     private bool hovering;
     private bool placedDown;
@@ -99,6 +101,8 @@ public class SpecialJarThings : MonoBehaviour
 
         
         bug.GetComponent<BugStuff>().PlacedInJar();
+
+        AudioSource.PlayClipAtPoint(placeClip, Camera.main.transform.position);
 
 
         // make objecter perminet

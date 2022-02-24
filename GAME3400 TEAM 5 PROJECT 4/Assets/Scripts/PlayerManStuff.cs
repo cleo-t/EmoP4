@@ -12,9 +12,13 @@ public class PlayerManStuff : MonoBehaviour
 
 
     public GameObject net;
-    public Camera fpsCam;
     public GameObject bedroom;
     public GameObject crossHair;
+
+    public Camera fpsCam;
+
+    public AudioClip swingSound;
+    public AudioClip jarSound;
 
     private bool ohNo = false;
     private float nextTime = 0f;
@@ -107,9 +111,13 @@ public class PlayerManStuff : MonoBehaviour
                 BugStuff bug = target.transform.gameObject.GetComponent<BugStuff>();
                 BugManager.Bug bugType = bug.GetBugType();
 
+                AudioSource.PlayClipAtPoint(swingSound, Camera.main.transform.position);
+
 
                 if (InventoryManager.instance.BugCaught(bugType))
                 {
+                    PlaySoundAfterSeconds(2);
+
                     Destroy(target.transform.gameObject);
                 }
             }
@@ -129,6 +137,12 @@ public class PlayerManStuff : MonoBehaviour
 
             }
         }
+    }
+
+    private IEnumerable PlaySoundAfterSeconds(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        AudioSource.PlayClipAtPoint(jarSound, Camera.main.transform.position);
     }
 
     private void Looking()
