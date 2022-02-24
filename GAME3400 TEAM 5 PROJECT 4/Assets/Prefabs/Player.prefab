@@ -828,7 +828,7 @@ MonoBehaviour:
   crossHair: {fileID: 3325984491913983297}
   fpsCam: {fileID: 3325984493021764705}
   swingSound: {fileID: 8300000, guid: 31d7458c9e5824f738dd36432109d62d, type: 3}
-  jarSound: {fileID: 8300000, guid: a745479bc8f084eab887fc7855f5046a, type: 3}
+  jarSound: {fileID: 8300000, guid: cd89339909d234bba84202e060c2aa49, type: 3}
   outOfJars: {fileID: 8300000, guid: f4c614e18780344afa086a84bd1845ff, type: 3}
   pickUpJar: {fileID: 8300000, guid: 40e15718c3d7740218786281a197e207, type: 3}
 --- !u!1 &3325984492698647191
@@ -1078,12 +1078,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3325984493021764719}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e86e90cde4b994fc493ad8f215e3a1c4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.257
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0

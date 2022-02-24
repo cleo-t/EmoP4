@@ -37,6 +37,7 @@ public class PageTurner : MonoBehaviour
 
     private void OnMouseDown()
     {
+        AudioSource.PlayClipAtPoint(pageFliip, Camera.main.transform.position);
         StartCoroutine(this.TurnPage());
     }
 
@@ -68,7 +69,7 @@ public class PageTurner : MonoBehaviour
 
     private IEnumerator TurnPage()
     {
-        AudioSource.PlayClipAtPoint(pageFliip, Camera.main.transform.position);
+        
         if (!this.turning)
         {
             this.turning = true;

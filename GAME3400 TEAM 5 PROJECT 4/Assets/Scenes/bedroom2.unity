@@ -5753,7 +5753,7 @@ PrefabInstance:
     - target: {fileID: 8283331196815154425, guid: 6c204d8047e419043921f2663771ee0b, type: 3}
       propertyPath: pageFliip
       value: 
-      objectReference: {fileID: 8300000, guid: 8d7ab5ef28ede4ac18078b440b4ee2fb, type: 3}
+      objectReference: {fileID: 8300000, guid: a4bcdb88aa8aa4918bf4e0236ebc0da0, type: 3}
     - target: {fileID: 8283331196815154426, guid: 6c204d8047e419043921f2663771ee0b, type: 3}
       propertyPath: m_Name
       value: TurnyPages
@@ -24022,6 +24022,14 @@ PrefabInstance:
     - target: {fileID: 3325984493021764706, guid: 30870bd8faf64400e973c56564d6cd39, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 3965449746082651725, guid: 30870bd8faf64400e973c56564d6cd39, type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3965449746082651725, guid: 30870bd8faf64400e973c56564d6cd39, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30870bd8faf64400e973c56564d6cd39, type: 3}
