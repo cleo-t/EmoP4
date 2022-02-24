@@ -43,8 +43,10 @@ public class BugStuff : MonoBehaviour
                     ClimbTree();
                     break;
                 case BugManager.Bug.Ants:
+                    AntMove();
                     break;
                 case BugManager.Bug.Snail:
+                    SnailMail();
                     break;
                 case BugManager.Bug.Ladybug:
                     ClimbTree();
@@ -53,6 +55,7 @@ public class BugStuff : MonoBehaviour
                     BeeMove();
                     break;
                 case BugManager.Bug.Spider:
+                    Spoder();
                     break;
                 default:
                     break;
@@ -140,6 +143,57 @@ public class BugStuff : MonoBehaviour
 
         Vector3 front = new Vector3(transform.position.x, transform.position.y, initialBugPosition.z - positionOffset);
         Vector3 back = new Vector3(transform.position.x, transform.position.y, initialBugPosition.z + positionOffset);
+        transform.position = Vector3.Lerp(front, back, t3);
+    }
+    void AntMove()
+    {
+        float positionOffset = .75f;
+        float speed = 1.0f;
+        float t2 = Mathf.Sin(speed * Time.time) + 1;
+        t2 /= 2;
+        float t3 = Mathf.Cos(speed/10 * Time.time) + 1;
+        t3 /= 2;
+
+        Vector3 left = new Vector3(initialBugPosition.x, transform.position.y, transform.position.z);
+        Vector3 right = new Vector3(initialBugPosition.x + positionOffset, transform.position.y, transform.position.z);
+        transform.position = Vector3.Lerp(left, right, t2);
+
+        Vector3 front = new Vector3(transform.position.x, transform.position.y, initialBugPosition.z);
+        Vector3 back = new Vector3(transform.position.x, transform.position.y, initialBugPosition.z + positionOffset);
+        transform.position = Vector3.Lerp(front, back, t3);
+    }
+    void SnailMail()
+    {
+        float positionOffset = 2.0f;
+        float speed = .75f;
+
+        float t3 = Mathf.Cos(speed / 10 * Time.time) + 1;
+        t3 /= 2;
+        Vector3 front = new Vector3(transform.position.x, transform.position.y, initialBugPosition.z);
+        Vector3 back = new Vector3(transform.position.x, transform.position.y, initialBugPosition.z + positionOffset);
+        transform.position = Vector3.Lerp(front, back, t3);
+    }
+    void Spoder()
+    {
+        float positionOffset = .3f;
+        float speed = 5f;
+        float t = Mathf.Sin(speed * Time.time) + 1;
+        t /= 2;
+        float t2 = Mathf.Sin(speed * Time.time) + 1;
+        t2 /= 2;
+        float t3 = Mathf.Cos(speed * Time.time) + 1;
+        t3 /= 2;
+
+        Vector3 top = new Vector3(transform.position.x, initialBugPosition.y - positionOffset, transform.position.z);
+        Vector3 bottom = new Vector3(transform.position.x, initialBugPosition.y + positionOffset, transform.position.z);
+        transform.position = Vector3.Lerp(top, bottom, t);
+
+        Vector3 left = new Vector3(initialBugPosition.x - positionOffset, transform.position.y, transform.position.z);
+        Vector3 right = new Vector3(initialBugPosition.x + positionOffset, transform.position.y, transform.position.z);
+        transform.position = Vector3.Lerp(left, right, t2);
+
+        Vector3 front = new Vector3(transform.position.x, transform.position.y, initialBugPosition.z - positionOffset/3);
+        Vector3 back = new Vector3(transform.position.x, transform.position.y, initialBugPosition.z + positionOffset/3);
         transform.position = Vector3.Lerp(front, back, t3);
     }
 
