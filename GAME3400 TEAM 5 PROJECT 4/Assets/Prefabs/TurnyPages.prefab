@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d82c2ec7e1002e458b3dcc5738d78fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pageFliip: {fileID: 8300000, guid: a4bcdb88aa8aa4918bf4e0236ebc0da0, type: 3}
   pageTextures:
   - {fileID: 2800000, guid: f71cd62b8574e6347bff354ea977ab26, type: 3}
   - {fileID: 2800000, guid: 4fb1df345ea3c814e8c36ea8f4adbaff, type: 3}

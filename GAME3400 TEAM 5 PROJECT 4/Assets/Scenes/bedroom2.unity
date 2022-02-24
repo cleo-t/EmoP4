@@ -5750,6 +5750,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8283331196815154425, guid: 6c204d8047e419043921f2663771ee0b, type: 3}
+      propertyPath: pageFliip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8d7ab5ef28ede4ac18078b440b4ee2fb, type: 3}
     - target: {fileID: 8283331196815154426, guid: 6c204d8047e419043921f2663771ee0b, type: 3}
       propertyPath: m_Name
       value: TurnyPages

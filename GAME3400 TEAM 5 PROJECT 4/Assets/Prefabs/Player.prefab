@@ -830,6 +830,7 @@ MonoBehaviour:
   swingSound: {fileID: 8300000, guid: 31d7458c9e5824f738dd36432109d62d, type: 3}
   jarSound: {fileID: 8300000, guid: a745479bc8f084eab887fc7855f5046a, type: 3}
   outOfJars: {fileID: 8300000, guid: f4c614e18780344afa086a84bd1845ff, type: 3}
+  pickUpJar: {fileID: 8300000, guid: 40e15718c3d7740218786281a197e207, type: 3}
 --- !u!1 &3325984492698647191
 GameObject:
   m_ObjectHideFlags: 0
