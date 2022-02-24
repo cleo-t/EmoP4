@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class EnableWhenInvFull : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private GameObject objectToDisable;
+    [SerializeField]
+    private int requiredJars = 3;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        this.objectToDisable.SetActive(InventoryManager.instance.GetJarCount() >= this.requiredJars && InventoryManager.instance.hasNet);
     }
 }
