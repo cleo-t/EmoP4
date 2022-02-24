@@ -7,7 +7,7 @@ public class MeshHighlightOnHover : MonoBehaviour
     [SerializeField]
     private List<Renderer> renderers;
     [SerializeField]
-    private float lightCoeff = 0.75f;
+    private float lightCoeff = 0.5f;
 
     private void OnMouseEnter()
     {

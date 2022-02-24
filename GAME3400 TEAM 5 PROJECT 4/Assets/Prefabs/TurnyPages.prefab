@@ -338,7 +338,7 @@ MonoBehaviour:
   - {fileID: 8283331197309018628}
   - {fileID: 8283331196275915312}
   - {fileID: 8283331198284156644}
-  lightCoeff: 0.75
+  lightCoeff: 0.5
 --- !u!1 &8283331197177618839
 GameObject:
   m_ObjectHideFlags: 0
