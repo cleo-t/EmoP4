@@ -35,7 +35,6 @@ public class SpecialJarThings : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        
     }
 
     // Start is called before the first frame update
@@ -84,7 +83,7 @@ public class SpecialJarThings : MonoBehaviour
         }
     }
 
-    public void Place(BugManager.Bug bugType)
+    public void Place(BugManager.Bug bugType, bool doneByManager = false)
     {
         // Change object material
         
@@ -112,6 +111,11 @@ public class SpecialJarThings : MonoBehaviour
         spotLight.SetActive(false);
 
         placedDown = true;
+
+        if (!doneByManager)
+        {
+            SpecialJarManager.instance.JarPlaced(this.name, bugType);
+        }
     }
 
     public static implicit operator SpecialJarThings(GameObject v)
