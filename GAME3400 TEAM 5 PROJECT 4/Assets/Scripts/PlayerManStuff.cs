@@ -16,6 +16,8 @@ public class PlayerManStuff : MonoBehaviour
     public GameObject bedroom;
     public GameObject crossHair;
 
+    public 
+
     private bool ohNo = false;
     private float nextTime = 0f;
 
@@ -106,6 +108,8 @@ public class PlayerManStuff : MonoBehaviour
             {
                 BugStuff bug = target.transform.gameObject.GetComponent<BugStuff>();
                 BugManager.Bug bugType = bug.GetBugType();
+
+                AudioSource.PlayClipAtPoint()
 
 
                 if (InventoryManager.instance.BugCaught(bugType))
