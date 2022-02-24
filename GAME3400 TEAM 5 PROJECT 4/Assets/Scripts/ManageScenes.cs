@@ -33,7 +33,6 @@ public class ManageScenes : MonoBehaviour
 
     void Start()
     {
-        this.fading = false;
         GameObject sceneFaderObject = GameObject.FindGameObjectWithTag(this.sceneFaderTag);
         if (sceneFaderObject != null)
         {
@@ -45,6 +44,7 @@ public class ManageScenes : MonoBehaviour
             this.SetFaderOpacity(1);
         }
         this.targetOpacity = 0;
+        StartCoroutine(this.InitialFade());
     }
 
     // Update is called once per frame
@@ -83,5 +83,16 @@ public class ManageScenes : MonoBehaviour
         this.fading = false;
         yield return new WaitForSecondsRealtime(this.pauseTime);
         SceneManager.LoadScene(sceneName);
+    }
+
+    private IEnumerator InitialFade()
+    {
+        this.fading = true;
+        while(this.sceneFader.color.a > 0.001f)
+        {
+            yield return null;
+        }
+        this.SetFaderOpacity(0);
+        this.fading = false;
     }
 }
