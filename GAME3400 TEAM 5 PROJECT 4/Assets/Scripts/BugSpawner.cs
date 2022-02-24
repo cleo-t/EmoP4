@@ -94,6 +94,35 @@ public class BugSpawner : MonoBehaviour
         if (bugPrefab != null)
         {
             this.spawnedBug = Instantiate(bugPrefab, this.transform.position, Quaternion.identity, this.transform);
+            this.OnSpawn(bugToSpawn, spawnedBug);
+        }
+    }
+
+    private void OnSpawn(BugManager.Bug bug, GameObject obj)
+    {
+        switch (bug)
+        {
+            case BugManager.Bug.None:
+                break;
+            case BugManager.Bug.Worm:
+                break;
+            case BugManager.Bug.Butterfly:
+                break;
+            case BugManager.Bug.Stickbug:
+                break;
+            case BugManager.Bug.Ants:
+                obj.transform.Rotate(0, 44.145f, 0);
+                break;
+            case BugManager.Bug.Snail:
+                break;
+            case BugManager.Bug.Ladybug:
+                break;
+            case BugManager.Bug.Bee:
+                break;
+            case BugManager.Bug.Spider:
+                break;
+            default:
+                break;
         }
     }
 }
