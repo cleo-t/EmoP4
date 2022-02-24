@@ -31,7 +31,7 @@ public class PlayerManStuff : MonoBehaviour
     void Awake()
     {
         ohNo = false;
-        net.SetActive(false);
+        net.SetActive(InventoryManager.instance.hasNet);
         crossHair.SetActive(true);
         _controller = GetComponent<CharacterController>();
 
