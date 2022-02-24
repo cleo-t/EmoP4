@@ -5,20 +5,23 @@ using UnityEngine;
 public class MeshHighlightOnHover : MonoBehaviour
 {
     [SerializeField]
-    private Renderer glow;
-
-    void Start()
-    {
-        this.glow.enabled = false;
-    }
+    private List<Renderer> renderers;
+    [SerializeField]
+    private float lightCoeff = 0.75f;
 
     private void OnMouseEnter()
     {
-        this.glow.enabled = true;
+        foreach(Renderer renderer in this.renderers)
+        {
+            renderer.material.color *= lightCoeff;
+        }
     }
 
     private void OnMouseExit()
     {
-        this.glow.enabled = false;
+        foreach (Renderer renderer in this.renderers)
+        {
+            renderer.material.color /= lightCoeff;
+        }
     }
 }

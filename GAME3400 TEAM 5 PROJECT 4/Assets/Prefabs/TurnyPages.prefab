@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1578869221296971601
 Transform:
   m_ObjectHideFlags: 0
@@ -333,7 +333,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da559e867519d0a49b3405f2ea391646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glow: {fileID: 8571849278691017880}
+  renderers:
+  - {fileID: 8283331196776296942}
+  - {fileID: 8283331197309018628}
+  - {fileID: 8283331196275915312}
+  - {fileID: 8283331198284156644}
+  lightCoeff: 0.75
 --- !u!1 &8283331197177618839
 GameObject:
   m_ObjectHideFlags: 0
